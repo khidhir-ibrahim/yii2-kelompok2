@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Post;
-use app\models\PostSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
