@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'idpost',
             'title:ntext',
-            'content:ntext',
+            'content:html',
             'date',
             'username',
         ],

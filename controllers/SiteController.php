@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Post;
+use app\models\PostSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -61,7 +63,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $data = new Post;
+        $data = $data->find()->all();
+        return $this->render('index',['data'=>$data]);
     }
 
     /**

@@ -5,13 +5,23 @@
 $this->title = 'Beranda';
 ?>
 <div class="site-index">
-
-    <div class="body-content">
-        <h1>Judul</h1>
-        <p>
-            <small>
-            admin 2022-02-01 11:14:55
-            </small>
-        </p>
-    </div>
+    <?php 
+    foreach($data as $key=>$value){
+        ?>
+        <div class="body-content">
+            <h1><?=$value->title?></h1>
+        
+            <p>
+                <small>
+                <?=$value->username?> <?=date('Y-m-d',strtotime($value->date))?>
+                </small>
+            </p>
+            <div>
+                <?=$value->content?>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+    
 </div>

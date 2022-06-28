@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
       ]],['placeholder' => 'mm-dd-yyyy'])
     ->textInput(['placeholder' => \Yii::t('app', 'mm-dd-yyyy')]) ; ?>
 
-    <?= $form->field($model, 'username')->textInput(['maxlength' => true, 'value' => Yii::$app->user->identity->username, 'disabled'=>'true']) ?>
+    <?= $form->field($model, 'username')->textInput(['maxlength' => true, 'value' => Yii::$app->user->identity->username, 'readonly'=>true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
