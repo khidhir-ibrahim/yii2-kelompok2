@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'date')->textInput(['rows' => 6, 'readonly' => true, 'value'=>date('Y-m-d h:i:s')]);?>
+    <?= $form->field($model, 'date')->textInput(['rows' => 6, 'readonly' => true, 'value'=>date('Y-m-d H:i:s')]);?>
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true, 'value' => Yii::$app->user->identity->username, 'readonly'=>true]) ?>
 

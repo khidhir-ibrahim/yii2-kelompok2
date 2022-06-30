@@ -13,11 +13,20 @@ $this->title = 'Beranda';
         
             <p>
                 <small>
-                <?=$value->username?> <?=date('Y-m-d',strtotime($value->date))?>
+                <?=$value->username?> <?=$value->date?>
                 </small>
             </p>
             <div>
-                <?=$value->content?>
+                <?php
+                $html       = $value->content;
+                $start      = strpos($html, '<p>');
+                $end        = strpos($html, '</p>', $start);
+                $paragraph  = substr($html, $start, $end-$start+4);
+                ?>
+                <?=$paragraph?>
+            </div>
+            <div>
+                <a href="/index.php?r=site/detailPost&id=<?=$value->idpost?>" class="btn btn-primary">Read More</a>
             </div>
         </div>
         <?php

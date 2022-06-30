@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title:ntext',
             'content:html',
             'username',
+            'date',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, app\models\Post $model, $key, $index, $column) {

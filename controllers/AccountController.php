@@ -95,13 +95,12 @@ class AccountController extends Controller
         if ($this->request->isPost) {
             
             $data = [
-                '_csrf' => $this->request->post()['_csrf'],
-                'Account' => [
-                    'username' => $this->request->post()['Account']['username'],
-                    'password' => md5($this->request->post()['Account']['password']),
-                    'name' => $this->request->post()['Account']['name'],
-                    'role' => $this->request->post()['Account']['role'],
-
+                '_csrf'         => $this->request->post()['_csrf'],
+                'Account'       => [
+                    'username'  => $this->request->post()['Account']['username'],
+                    'password'  => md5($this->request->post()['Account']['password']),
+                    'name'      => $this->request->post()['Account']['name'],
+                    'role'      => $this->request->post()['Account']['role'],
                 ]
             ];
 
