@@ -40,7 +40,7 @@ class AccountController extends Controller
     public function actionIndex()
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         if(Yii::$app->user->identity->role !== 'admin'){
             return "Anda tidak memiliki akses untuk halaman ini!";
@@ -65,7 +65,7 @@ class AccountController extends Controller
     public function actionView($username)
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         if(Yii::$app->user->identity->role !== 'admin'){
             return "Anda tidak memiliki akses untuk halaman ini!";
@@ -84,7 +84,7 @@ class AccountController extends Controller
     public function actionCreate()
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         if(Yii::$app->user->identity->role !== 'admin'){
             return "Anda tidak memiliki akses untuk halaman ini!";
@@ -126,7 +126,7 @@ class AccountController extends Controller
     public function actionUpdate($username)
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         if(Yii::$app->user->identity->role !== 'admin'){
             return "Anda tidak memiliki akses untuk halaman ini!";
@@ -153,7 +153,7 @@ class AccountController extends Controller
     public function actionDelete($username)
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         if(Yii::$app->user->identity->role !== 'admin'){
             return "Anda tidak memiliki akses untuk halaman ini!";

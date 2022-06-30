@@ -39,7 +39,7 @@ class PostController extends Controller
     public function actionIndex()
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         $searchModel = new PostSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
@@ -71,7 +71,7 @@ class PostController extends Controller
     public function actionCreate()
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         $model = new Post();
 
@@ -98,7 +98,7 @@ class PostController extends Controller
     public function actionUpdate($idpost)
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         $model = $this->findModel($idpost);
 
@@ -121,7 +121,7 @@ class PostController extends Controller
     public function actionDelete($idpost)
     {
         if(Yii::$app->user->isGuest){
-            return $this->redirect('index.php?r=site/login')->send();
+            return $this->redirect('/site/login')->send();
         }
         $this->findModel($idpost)->delete();
 
